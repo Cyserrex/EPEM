@@ -1,0 +1,15 @@
+# Normalise to LF in the repository so a clone on Linux or macOS gets a gradlew
+# that actually runs; CRLF in a shell script makes the shebang fail.
+* text=auto eol=lf
+
+gradlew      text eol=lf
+*.sh         text eol=lf
+*.bat        text eol=crlf
+
+*.jar        binary
+*.apk        binary
+*.aar        binary
+*.keystore   binary
+*.jks        binary
+*.png        binary
+*.webp       binary
