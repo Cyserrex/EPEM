@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+
+    <!-- USB host (OTG) is the whole point of this plugin, but we keep it optional
+         so the APK still installs on tablets/phones without an OTG port. -->
+    <uses-feature android:name="android.hardware.usb.host" android:required="false" />
+    <!-- ACCESS_WIFI_STATE implies a required wifi feature; a USB-only setup does not need it. -->
+    <uses-feature android:name="android.hardware.wifi" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EpsonMax">
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:exported="true"
+            android:label="@string/settings_title"
+            android:permission="android.permission.START_PRINT_SERVICE_CONFIG_ACTIVITY" />
+
+        <activity
+            android:name=".ui.AddPrinterActivity"
+            android:exported="true"
+            android:label="@string/add_printer_title"
+            android:permission="android.permission.START_PRINT_SERVICE_CONFIG_ACTIVITY" />
+
+        <!-- Launched by the system when a USB printer is plugged into the OTG port.
+             It is a transparent activity: it grabs the USB permission and finishes. -->
+        <activity
+            android:name=".usb.UsbAttachActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Transparent">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/usb_device_filter" />
+        </activity>
+
+        <service
+            android:name=".service.EpsonPrintService"
+            android:exported="true"
+            android:label="@string/service_label"
+            android:permission="android.permission.BIND_PRINT_SERVICE">
+            <intent-filter>
+                <action android:name="android.printservice.PrintService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.printservice"
+                android:resource="@xml/printservice" />
+        </service>
+
+    </application>
+</manifest>

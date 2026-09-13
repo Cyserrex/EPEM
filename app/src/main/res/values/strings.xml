@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Epson Print Enabler MAX</string>
+    <string name="service_label">Epson Print Enabler MAX</string>
+    <string name="vendor_name">Epson Print Enabler MAX</string>
+    <string name="settings_title">Plugin settings</string>
+    <string name="add_printer_title">Add printer manually</string>
+
+    <string name="main_intro">Prints to Epson printers over Wi-Fi and over USB OTG.</string>
+    <string name="open_print_settings">Enable in system print settings</string>
+    <string name="refresh">Refresh</string>
+    <string name="usb_section">USB (OTG) printers</string>
+    <string name="net_section">Network printers</string>
+    <string name="no_usb_printers">No USB printer detected. Connect one through an OTG adapter.</string>
+    <string name="grant_usb">Grant USB access</string>
+    <string name="test_page">Print test page</string>
+
+    <string name="host_hint">IP address or hostname</string>
+    <string name="port_hint">Port (631 = IPP, 9100 = raw)</string>
+    <string name="name_hint">Display name</string>
+    <string name="save">Save</string>
+
+    <string name="pref_only_epson">Show Epson printers only</string>
+    <string name="pref_only_epson_sum">Hide non-Epson IPP printers found on the network</string>
+    <string name="pref_prefer_pdf">Send PDF directly when supported</string>
+    <string name="pref_prefer_pdf_sum">Faster and sharper; disable if your printer garbles PDFs</string>
+    <string name="pref_render_dpi">Rasterisation DPI</string>
+    <string name="pref_debug">Verbose logging</string>
+    <string name="manual_printers">Manually added printers</string>
+</resources>

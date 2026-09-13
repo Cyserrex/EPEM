@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- USB printer class (7). Covers every printer regardless of vendor, which is
+         what lets this plugin talk to a raw-bulk Epson and an IPP-USB Epson alike. -->
+    <usb-device class="7" />
+    <!-- A few Epson units expose the printer interface behind a vendor-specific
+         device class, so also match Seiko Epson's vendor id (0x04B8 = 1208). -->
+    <usb-device vendor-id="1208" />
+</resources>

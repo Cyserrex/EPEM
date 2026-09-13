@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreferenceCompat
+        app:key="only_epson"
+        app:defaultValue="true"
+        app:title="@string/pref_only_epson"
+        app:summary="@string/pref_only_epson_sum" />
+    <SwitchPreferenceCompat
+        app:key="prefer_pdf"
+        app:defaultValue="true"
+        app:title="@string/pref_prefer_pdf"
+        app:summary="@string/pref_prefer_pdf_sum" />
+    <ListPreference
+        app:key="render_dpi"
+        app:defaultValue="300"
+        app:title="@string/pref_render_dpi"
+        app:entries="@array/dpi_entries"
+        app:entryValues="@array/dpi_values"
+        app:useSimpleSummaryProvider="true" />
+    <SwitchPreferenceCompat
+        app:key="debug_log"
+        app:defaultValue="false"
+        app:title="@string/pref_debug" />
+</PreferenceScreen>

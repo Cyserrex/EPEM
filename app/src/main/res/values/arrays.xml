@@ -1,0 +1,12 @@
+<resources>
+    <string-array name="dpi_entries">
+        <item>150 dpi (draft, low memory)</item>
+        <item>300 dpi (recommended)</item>
+        <item>600 dpi (photo, needs RAM)</item>
+    </string-array>
+    <string-array name="dpi_values">
+        <item>150</item>
+        <item>300</item>
+        <item>600</item>
+    </string-array>
+</resources>

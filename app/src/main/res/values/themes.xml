@@ -1,0 +1,13 @@
+<resources>
+    <style name="Theme.EpsonMax" parent="Theme.Material3.DayNight">
+        <!-- PreferenceFragmentCompat refuses to inflate without this attribute. -->
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    </style>
+    <style name="Theme.Transparent" parent="Theme.Material3.DayNight">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>
